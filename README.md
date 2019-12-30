@@ -10,7 +10,8 @@ https://cricstat.in
 
 ```sql
 
-create table player_list (Cap_No varchar2(5),Player_Name varchar2(40) not null,Nation varchar2(20) not null,Debut int not null,
+create table player_list (Cap_No varchar2(5),Player_Name varchar2(40) not null,
+Nation varchar2(20) not null,Debut int not null,
 constraint Cap_No_pk primary key (Cap_No));
 ```
 
