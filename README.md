@@ -31,6 +31,16 @@ insert into player_list values ('a123','Ricky Ponting','Australia','Right Hand B
 insert into player_list values ('e226','Jos Buttler','England','Right Hand Batsman');
 insert into player_list values ('p203','Babar Azam','Pakistan','Right Hand Batsman');
 select * from player_list;
+
+i175	Virat Kohli	  India	       Right Hand Batsman
+sa78	De Villiers	  South Africa	Right Hand Batsman
+sa17	Jonty Rhodes	  South Africa	Right Hand Batsman
+a197	Aoron Finch	  Australia	       Right Hand Batsman
+i158	MsDhoni	  India	       Right Hand Batsman
+a123	Ricky Ponting	  Australia	       Right Hand Batsman
+e226	Jos Buttler	  England	       Right Hand Batsman
+p203	Babar Azam	  Pakistan	       Right Hand Batsman
+
 --delete player_list;
 ```
 ### Feature 2;Batting career  
@@ -84,31 +94,96 @@ insert into player_career values ('p203','test',25,1707,13,7,127);
 insert into player_career values ('p203','t20',36,1405,12,0,97);
 select * from player_career
 
+Cap   Match  MATCHES RUNS   50'S  100'S  HIGH SCORE
+no     ID      
+i175	odi	242	11609	55	43	183
+i175	test	84	7202	22	27	254
+i175	t20	75	2633	24	0	94
+i158	test	90	4876	33	8	224
+i158	odi	350	10733	73	10	183
+i158	t20	98	1617	2	0	56
+sa78	odi	228	9577	53	25	176
+sa78	test	114	8765	46	22	278
+sa78	t20	78	1678	10	0	79
+a123	odi	375	13704	82	30	164
+a123	test	168	13378	62	41	257
+a123	t20	17	401	2	0	98
+e226	odi	141	3843	20	9	150
+e226	test	37	2012	15	1	106
+sa78	t20	66	1260	7	0	73
+sa78	odi	228	9577	53	25	176
+sa17	odi	245	5935	33	2	122
+sa17	test	52	2352	17	3	117
+sa78	t20	228	9577	53	25	176
+a197	odi	119	4559	24	15	153
+a197	test	5	278	2	0	62
+a197	t20	58	1878	11	2	172
+p203	odi	74	3359	15	11	125
+p203	test	25	1707	13	7	127
+p203	t20	36	1405	12	0	97
+
 ```
 
 ### Feature 2 : Display the career of individual player in all formats
+```
 select * from player_career where cap_no='i175' 
+        
+        Cap   Match  MATCHES RUNS   50'S  100'S  HIGH SCORE
+         no     ID   
+        
+        i175	odi	242	11609	55	43	183
+        i175	test	84	7202	22	27	254
+        i175	t20	75	2633	24	0	94
 
-
+```
 
 ### Feature 3: display the overall hundred, fifty, and runs by individual player
-                                                                                 
+ ```                                                                                
 select sum(hundred), sum(fifty),sum(runs) from player_career where cap_no='i175' 
 
+                  100'S     50'S    RUNS
+                   
+                   70	101	21444
+```
 ### Feature 4: Display the player name with highscore in a descending order 
+---
 
 select l.player_name,c.high_score from player_list l,player_career c where c.match_id='test' and l.cap_no = c.cap_no
-order by high_score desc ;  
+order by high_score desc ; 
 
+               Player Name     High Score
+               
+               De Villiers	      278
+             Ricky Ponting	      257
+              Virat Kohli	      254
+                MS Dhoni	      224
+                Babar Azam	      127
+               Jonty Rhodes	      117
+                Jos Buttler	      106
+                 Aoron Finch       62
+---
 ### Feature 5: display the overall hundred fifty and runs by all players
-                                                                                                                                                
+                                                                                                                                          ---      
 select cap_no, sum(hundred), sum(fifty),sum(runs) from player_career group by cap_no; 
 
 
-### Feature 6: Display the career of all players in all formats
+             i175	70	101	21444
+             e226	10	35	5855
+             sa78	97	222	40434
+             p203	18	40	6471
+             i158	18	108	17226
+             a123	71	146	27483
+             sa17	5	50	8287
+             a197	17	37	6715
 
+---
+### Feature 6: Display the career of all players in all formats
+---
 select l.player_name,t.* from player_career t ,player_list l where l.cap_no=t.cap_no  
-                                                   
+
+---      
+    
+                                                     
 
 ```SQL
 create table match_data (cap_no varchar2(5),
@@ -129,8 +204,20 @@ insert into match_data values ('a197','test',78);
 insert into match_data values ('i175','test',28);
 select * from match_data
 
+        CAP   MATCH  RUNS
+        NO    TYPE
+        
+        i175	odi	130
+        i158	odi	150
+        p203	t20	80
+        a123	test	160
+        sa78	t20	133
+        sa17	test	190
+        a197	test	78
+        i175	test	28
+
 ```
-Feature 7: Update the career of the player
+## Feature 7: Update the career of the player
 ```SQL
 create or replace PROCEDURE update_career(i_cap_no in varchar2,i_type in varchar2,i_runs in number)
 AS
@@ -177,6 +264,10 @@ declare
  end;
  
  
+ select * from player_career where cap_no='i175' and match_id = 'odi'
  
- select * from player_career p inner join player_list l on l.cap_no=p.cap_no;
+                cap_no    match_id  matches    runs      50's   100's   high score
+                
+                 i175 	odi 	  243	     11739	  55	  44	   183
+ 
 ```
