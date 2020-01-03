@@ -43,6 +43,7 @@ select * from player_list;
 ### Feature 2;Batting career  
 
 --sql
+
 select * from player_list
 drop table  player_career;
 create table player_career
@@ -88,7 +89,9 @@ insert into player_career values ('p203','odi',74,3359,15,11,125);
 insert into player_career values ('p203','test',25,1707,13,7,127);
 insert into player_career values ('p203','t20',36,1405,12,0,97);
 select * from player_career
+
 ```
+```SQL
 ### Feature 2 : Display the career of individual player in all formats
 select * from player_career where cap_no='i175' 
 
@@ -111,7 +114,7 @@ select cap_no, sum(hundred), sum(fifty),sum(runs) from player_career group by ca
 ### Feature 6: Display the career of all players in all formats
 
 select l.player_name,t.* from player_career t ,player_list l where l.cap_no=t.cap_no  
-                                                            
+```                                                            
 
 ```SQL
 create table match_data (cap_no varchar2(5),
