@@ -263,6 +263,12 @@ declare
  update_career (v_cap_no,v_type,v_runs);
  end;
  
+              Cap   Match  MATCHES  RUNS   50'S  100'S  HIGH SCORE
+               no     ID    
+               
+             i175	odi	242	11609	 55	43	183
+ 
+ 
  
  select * from player_career where cap_no='i175' and match_id = 'odi'
  
