@@ -62,7 +62,8 @@ constraint fifty_ck check (fifty>=0),
 constraint hundred_ck check (hundred>=0),
 constraint high_score_ck check (high_score>=0)
 );
-
+```
+```SQL
 insert into player_career values ('i175','odi',242,11609,55,43,183);
 insert into player_career values ('i175','test',84,7202,22,27,254);
 insert into player_career values ('i175','t20',75,2633,24,0,94);
