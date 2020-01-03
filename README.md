@@ -19,15 +19,8 @@ constraint nation_ck check (nation in('India','Australia','South Africa','Englan
 update player_list set cap_no = 'e226' where player_name = 'Jos Buttler'
 --drop table player_list
 
-
-
 select * from player_list
 
-```
-
- 
-
-```sql
 
 insert into player_list values ('i175','Virat Kohli','India','Right Hand Batsman');
 insert into player_list values ('sa78','De Villiers','South Africa','Right Hand Batsman');
@@ -42,7 +35,7 @@ select * from player_list;
 ```
 ### Feature 2;Batting career  
 
---sql
+```SQL
 
 select * from player_list
 drop table  player_career;
