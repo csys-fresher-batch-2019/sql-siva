@@ -6,7 +6,7 @@
 ### Feature 1:List the name of the players
 
 ```sql
-drop table player_list;
+--drop table player_list;
 
 create table player_list(
 cap_no varchar2(5),
