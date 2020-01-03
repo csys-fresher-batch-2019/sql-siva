@@ -19,9 +19,11 @@ constraint nation_ck check (nation in('India','Australia','South Africa','Englan
 update player_list set cap_no = 'e226' where player_name = 'Jos Buttler'
 --drop table player_list
 
-```
+
 
 select * from player_list
+
+```
 
  
 
@@ -86,9 +88,10 @@ insert into player_career values ('p203','odi',74,3359,15,11,125);
 insert into player_career values ('p203','test',25,1707,13,7,127);
 insert into player_career values ('p203','t20',36,1405,12,0,97);
 select * from player_career
-
+```
 ### Feature 2 : Display the career of individual player in all formats
 select * from player_career where cap_no='i175' 
+
 
 
 ### Feature 3: display the overall hundred, fifty, and runs by individual player
@@ -110,7 +113,7 @@ select cap_no, sum(hundred), sum(fifty),sum(runs) from player_career group by ca
 select l.player_name,t.* from player_career t ,player_list l where l.cap_no=t.cap_no  
                                                             
 
-
+```SQL
 create table match_data (cap_no varchar2(5),
 match_type varchar2(5) not null,
 runs int not null,
@@ -129,9 +132,9 @@ insert into match_data values ('a197','test',78);
 insert into match_data values ('i175','test',28);
 select * from match_data
 
-
+```
 Feature 7: Update the career of the player
-
+```SQL
 create or replace PROCEDURE update_career(i_cap_no in varchar2,i_type in varchar2,i_runs in number)
 AS
 v_fifty number;
@@ -179,3 +182,4 @@ declare
  
  
  select * from player_career p inner join player_list l on l.cap_no=p.cap_no;
+```
