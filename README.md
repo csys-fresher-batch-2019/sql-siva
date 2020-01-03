@@ -32,11 +32,11 @@ insert into player_list values ('e226','Jos Buttler','England','Right Hand Batsm
 insert into player_list values ('p203','Babar Azam','Pakistan','Right Hand Batsman');
 select * from player_list;
 
-i175	Virat Kohli	  India	       Right Hand Batsman
+i175	Virat Kohli	    India	       Right Hand Batsman
 sa78	De Villiers	  South Africa	Right Hand Batsman
 sa17	Jonty Rhodes	  South Africa	Right Hand Batsman
 a197	Aoron Finch	  Australia	       Right Hand Batsman
-i158	MsDhoni	  India	       Right Hand Batsman
+i158	  MsDhoni	    India	       Right Hand Batsman
 a123	Ricky Ponting	  Australia	       Right Hand Batsman
 e226	Jos Buttler	  England	       Right Hand Batsman
 p203	Babar Azam	  Pakistan	       Right Hand Batsman
