@@ -255,9 +255,9 @@ END UPDATE_CAREER;
 
 
 declare
- v_cap_no  varchar2(5) := 'sa17';
- v_type  varchar2(5) := 'test';
- v_runs  number := 190;
+ v_cap_no  varchar2(5) := 'i175';
+ v_type  varchar2(5) := 'odi';
+ v_runs  number := 130;
  
  begin 
  update_career (v_cap_no,v_type,v_runs);
